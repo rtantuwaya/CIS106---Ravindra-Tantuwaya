@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS2P3"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-25 08:36:10 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMS0yNTswODoyNzowMiBQTTsyNDIx"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMS0yNTswODozNjoxMCBQTTsxOzI1Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="length" type="Integer" array="False" size=""/>
+            <declare name="width" type="Integer" array="False" size=""/>
+            <declare name="area" type="Integer" array="False" size=""/>
+            <declare name="circumference" type="Integer" array="False" size=""/>
+            <input variable="length"/>
+            <input variable="width"/>
+            <assign variable="area" expression="length * width"/>
+            <assign variable="circumference" expression="2 * length + 2  * width"/>
+            <output expression="&quot;Rectangle area is: &quot; &amp;area &amp; &quot; and the circumference: &quot; &amp;&#13;&#10;circumference" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
