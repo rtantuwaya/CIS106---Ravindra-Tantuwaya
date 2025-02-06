@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PSP1"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-05 06:57:40 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0wNTswNjoyNzowNiBQTTsyNDIy"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0wNTswNjo1Nzo0MCBQTTsxOzI1MzE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="stockTicker" type="String" array="False" size=""/>
+            <declare name="numberOfShare" type="Integer" array="False" size=""/>
+            <declare name="costPerShare" type="Real" array="False" size=""/>
+            <declare name="amountInvested" type="Real" array="False" size=""/>
+            <input variable="stockTicker"/>
+            <input variable="numberOfShare"/>
+            <input variable="costPerShare"/>
+            <assign variable="amountInvested" expression="numberOfShare * costPerShare"/>
+            <output expression="&quot;Stock Ticker:  &quot; &amp;stockTicker" newline="True"/>
+            <output expression="&quot;Number of Shares: &quot; &amp;numberOfShare" newline="True"/>
+            <output expression="&quot;Cost per Share: &quot; &amp;costPerShare" newline="True"/>
+            <output expression="&quot;Amount Invested: &quot; &amp;amountInvested" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

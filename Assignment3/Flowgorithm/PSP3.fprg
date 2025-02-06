@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PSP3"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-05 07:39:49 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0wNTswNzowOTowMyBQTTsyNDIw"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0wNTswNzozOTo0OSBQTTsxOzI1NDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalAmount" type="Real" array="False" size=""/>
+            <declare name="numberOfPerson" type="Integer" array="False" size=""/>
+            <declare name="amountPerPerson" type="Real" array="False" size=""/>
+            <input variable="totalAmount"/>
+            <input variable="numberOfPerson"/>
+            <assign variable="amountPerPerson" expression="totalAmount / 3"/>
+            <output expression="&quot; Each person will receive: &quot; &amp;amountPerPerson" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
