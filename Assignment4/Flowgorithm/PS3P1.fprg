@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS3P1"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-11 07:43:06 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xMTswNzoxMjozNyBQTTsyNDE4"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xMTswNzo0MzowNiBQTTsxOzI1MjY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="examScore1" type="Real" array="False" size=""/>
+            <declare name="examScore2" type="Real" array="False" size=""/>
+            <declare name="weightExam1" type="Real" array="False" size=""/>
+            <declare name="weightExam2" type="Real" array="False" size=""/>
+            <declare name="weightedScore1" type="Real" array="False" size=""/>
+            <declare name="weightedScore2" type="Real" array="False" size=""/>
+            <declare name="totalScore" type="Real" array="False" size=""/>
+            <input variable="examScore1"/>
+            <input variable="examScore2"/>
+            <assign variable="weightExam1" expression="0.60"/>
+            <assign variable="weightExam2" expression="0.40"/>
+            <assign variable="weightedScore1" expression="examScore1 * weightExam1"/>
+            <assign variable="weightedScore2" expression="examScore2 * weightExam2"/>
+            <assign variable="totalScore" expression="weightedScore1 + weightedScore2"/>
+            <output expression="&quot;Total score is:  &quot; &amp;totalScore" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

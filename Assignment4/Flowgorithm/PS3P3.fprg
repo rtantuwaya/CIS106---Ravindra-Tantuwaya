@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS3P3"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-12 02:02:43 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xMjsxMjoyMjozNyBQTTsyNDE2"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xMjswMjowMjo0MyBQTTsxOzI1MTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalMeal" type="Real" array="False" size=""/>
+            <declare name="tipPersentage15" type="Real" array="False" size=""/>
+            <declare name="tipPersentage18" type="Real" array="False" size=""/>
+            <declare name="tipPersentage20" type="Real" array="False" size=""/>
+            <declare name="tipValue15" type="Real" array="False" size=""/>
+            <declare name="tipValue18" type="Real" array="False" size=""/>
+            <declare name="tipValue20" type="Real" array="False" size=""/>
+            <declare name="totalWithTip15" type="Real" array="False" size=""/>
+            <declare name="totalWithTip18" type="Real" array="False" size=""/>
+            <declare name="totalWithTip20" type="Real" array="False" size=""/>
+            <input variable="totalMeal"/>
+            <assign variable="tipPersentage15" expression="0.15"/>
+            <assign variable="tipPersentage18" expression="0.18"/>
+            <assign variable="tipPersentage20" expression="0.20"/>
+            <assign variable="tipValue15" expression="totalMeal * tipPersentage15"/>
+            <assign variable="tipValue18" expression="totalMeal * tipPersentage18"/>
+            <assign variable="tipValue20" expression="totalMeal * tipPersentage20"/>
+            <assign variable="totalWithTip15" expression="totalMeal + tipValue15"/>
+            <assign variable="totalWithTip18" expression="totalMeal + tipValue18"/>
+            <assign variable="totalWithTip20" expression="totalMeal + tipValue20"/>
+            <output expression="&quot; Total: &quot;&amp;totalMeal &amp;&quot;, &quot; &amp; &quot; Tip: &quot;&amp;tipValue15 &amp; &quot;, &quot; &amp;&#13;&#10;&quot;Total with Tip: &quot;&amp;totalWithTip15" newline="True"/>
+            <output expression="&quot; Total: &quot;&amp;totalMeal &amp;&quot;, &quot; &amp; &quot; Tip: &quot;&amp;tipValue18 &amp; &quot;, &quot; &amp;&#13;&#10;&quot;Total with Tip: &quot;&amp;totalWithTip18" newline="True"/>
+            <output expression="&quot; Total: &quot;&amp;totalMeal &amp;&quot;, &quot; &amp; &quot; Tip: &quot;&amp;tipValue20 &amp; &quot;, &quot; &amp;&#13;&#10;&quot;Total with Tip: &quot;&amp;totalWithTip20" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

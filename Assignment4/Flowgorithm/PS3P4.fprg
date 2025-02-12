@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS3P4"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-12 02:44:47 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xMjswMjozMjo0NSBQTTsyNDE1"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xMjswMjo0NDo0NyBQTTsxOzI1Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="firstName" type="String" array="False" size=""/>
+            <declare name="stepsWalked" type="Integer" array="False" size=""/>
+            <declare name="caloriesBurned" type="Real" array="False" size=""/>
+            <input variable="firstName"/>
+            <input variable="stepsWalked"/>
+            <assign variable="caloriesBurned" expression="stepsWalked * 0.25"/>
+            <output expression="&quot;First name: &quot; &amp;firstName &amp; &quot;, &quot; &amp; &quot;Calories Burned: &quot; &amp;caloriesBurned" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
