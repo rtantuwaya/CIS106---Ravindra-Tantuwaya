@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS34P1"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-19 03:29:48 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xOTswMjoyOTo0MyBQTTsyNDI2"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xOTswMzoyOTo0OCBQTTsxOzI1NDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="unitPrice" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <declare name="extendedPriceTax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <assign variable="tax" expression=".07"/>
+            <if expression="quantity &gt;= 1000">
+                <then>
+                    <assign variable="unitPrice" expression="3.00"/>
+                </then>
+                <else>
+                    <assign variable="unitPrice" expression="5.00"/>
+                </else>
+            </if>
+            <assign variable="extendedPrice" expression="quantity * unitPrice"/>
+            <assign variable="extendedPriceTax" expression="extendedPrice * tax"/>
+            <assign variable="total" expression="extendedPrice + extendedPriceTax"/>
+            <output expression="&quot;quantity: &quot; &amp;quantity" newline="True"/>
+            <output expression="&quot;Unit Price: &quot; &amp;unitPrice" newline="True"/>
+            <output expression="&quot;Extended Price: &quot; &amp;extendedPrice" newline="True"/>
+            <output expression="&quot;Tax: &quot; &amp;extendedPriceTax" newline="True"/>
+            <output expression="&quot;Total: &quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

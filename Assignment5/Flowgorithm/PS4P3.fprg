@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS34P3"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-19 04:37:33 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xOTswNDoxODo1MyBQTTsyNDI3"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0xOTswNDozNzozMyBQTTsxOzI1MzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numBook" type="Integer" array="False" size=""/>
+            <declare name="costPerBook" type="Real" array="False" size=""/>
+            <declare name="orderTotalAmount" type="Real" array="False" size=""/>
+            <declare name="shippingCharge" type="Real" array="False" size=""/>
+            <input variable="numBook"/>
+            <input variable="costPerBook"/>
+            <assign variable="orderTotalAmount" expression="numBook * costPerBook"/>
+            <if expression="orderTotalAmount &gt; 50.00">
+                <then>
+                    <assign variable="shippingCharge" expression="0.00"/>
+                </then>
+                <else>
+                    <assign variable="shippingCharge" expression="25.00"/>
+                </else>
+            </if>
+            <output expression="&quot;Order Total: &quot; &amp;orderTotalAmount" newline="True"/>
+            <output expression="&quot;Shipping Charge: &quot; &amp;shippingCharge" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
