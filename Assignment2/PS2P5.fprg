@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS2P5"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-25 09:33:16 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMS0yNTswOToxNTowNCBQTTsyNDIx"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMS0yNTswOTozMzoxNiBQTTsxOzI1MzI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="itemPrice" type="Real" array="False" size=""/>
+            <input variable="itemPrice"/>
+            <declare name="discountPercent" type="Real" array="False" size=""/>
+            <input variable="discountPercent"/>
+            <declare name="discountAmount" type="Real" array="False" size=""/>
+            <declare name="discountedPrice" type="Real" array="False" size=""/>
+            <assign variable="discountAmount" expression="itemPrice * (discountPercent/100)"/>
+            <assign variable="discountedPrice" expression="itemPrice - discountAmount"/>
+            <output expression="&quot;Discount Amount is:  &quot; &amp; discountAmount &amp; &quot; &quot;&#13;&#10;&amp; &quot; Discounted price of the item is: &quot; &amp; discountedPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,15 @@
+Declare String lastName
+
+Input lastName
+Declare Integer credits
+Declare Real totalTuition
+
+Input credits
+Declare Real perCreditHour
+
+Set perCreditHour = 250
+Declare Real labFee
+
+Set labFee = 100
+Set totalTuition = credits * perCreditHour + labFee
+Display "Student Last Name is: ", lastName, "  Total Tuition Fee ", totalTuition

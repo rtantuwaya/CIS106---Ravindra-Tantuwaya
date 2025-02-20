@@ -1,0 +1,8 @@
+Declare Real quantity
+Declare Real price
+Declare Real extended
+
+Input quantity
+Input price
+Set extended = quantity * price
+Display "The extended price extended: ", extended

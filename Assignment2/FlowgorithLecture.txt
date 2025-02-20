@@ -1,0 +1,10 @@
+Declare Integer num1
+Declare Integer num2
+Declare Integer result
+
+Display "Enter number 1: "
+Input num1
+Display "Enter second number: "
+Input num2
+Set result = num1 + num2
+Display "The result of two numbers: ", result

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Program Logic"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-01-25 01:19:34 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMS0yNTsxMjo1NDo1MSBQTTsyNDIw"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMS0yNTswMToxOTozNCBQTTsxOzI1Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1" type="Integer" array="False" size=""/>
+            <declare name="num2" type="Integer" array="False" size=""/>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter number 1: &quot;" newline="True"/>
+            <input variable="num1"/>
+            <output expression="&quot;Enter second number: &quot;" newline="True"/>
+            <input variable="num2"/>
+            <assign variable="result" expression="num1 + num2"/>
+            <output expression="&quot;The result of two numbers: &quot; &amp;result" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
