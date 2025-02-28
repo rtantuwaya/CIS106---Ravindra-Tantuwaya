@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS5P5"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-27 07:00:24 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0yNzswNjo0MToxNiBQTTsyNDIz"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMi0yNzswNzowMDoyNCBQTTsxOzI1MjY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="employeeLastName" type="String" array="False" size=""/>
+            <declare name="jobLevel" type="Integer" array="False" size=""/>
+            <declare name="employeeSalary" type="Real" array="False" size=""/>
+            <declare name="bonusRate" type="Real" array="False" size=""/>
+            <declare name="bonus" type="Real" array="False" size=""/>
+            <input variable="employeeLastName"/>
+            <input variable="jobLevel"/>
+            <input variable="employeeSalary"/>
+            <if expression="jobLevel &gt;= 10">
+                <then>
+                    <assign variable="bonusRate" expression="0.25"/>
+                </then>
+                <else>
+                    <if expression="jobLevel &gt;= 5">
+                        <then>
+                            <assign variable="bonusRate" expression="0.20"/>
+                        </then>
+                        <else>
+                            <assign variable="bonusRate" expression="0.10"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="bonus" expression="employeeSalary * bonusRate"/>
+            <output expression="&quot;Employee Last Name: &quot; &amp;employeeLastName" newline="True"/>
+            <output expression="&quot;Bonus: &quot; &amp;bonus" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
