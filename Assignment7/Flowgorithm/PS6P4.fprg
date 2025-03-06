@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS6P4"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-05 06:55:11 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNTsxMTo1NToxMiBBTTsyNDAy"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNTswNjo1NToxMSBQTTsxOzI1Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numberOfemployees" type="Integer" array="False" size=""/>
+            <assign variable="numberOfemployees" expression="0"/>
+            <declare name="sumGrossPays" type="Real" array="False" size=""/>
+            <assign variable="sumGrossPays" expression="0"/>
+            <declare name="continueProgram" type="String" array="False" size=""/>
+            <declare name="employeeLastName" type="String" array="False" size=""/>
+            <declare name="hoursWorked" type="Real" array="False" size=""/>
+            <declare name="payRate" type="Real" array="False" size=""/>
+            <declare name="regularHours" type="Real" array="False" size=""/>
+            <declare name="regularPay" type="Real" array="False" size=""/>
+            <declare name="assignHours" type="Integer" array="False" size=""/>
+            <assign variable="assignHours" expression="40"/>
+            <declare name="overTimeHours" type="Real" array="False" size=""/>
+            <assign variable="overTimeHours" expression="0"/>
+            <declare name="overTimePayRate" type="Integer" array="False" size=""/>
+            <assign variable="overTimePayRate" expression="0"/>
+            <declare name="overTimePay" type="Real" array="False" size=""/>
+            <declare name="grossPay" type="Real" array="False" size=""/>
+            <declare name="sumOfGrossPay" type="Real" array="False" size=""/>
+            <declare name="averagePay" type="Real" array="False" size=""/>
+            <input variable="continueProgram"/>
+            <while expression="continueProgram == &quot;Yes&quot;">
+                <input variable="employeeLastName"/>
+                <input variable="hoursWorked"/>
+                <input variable="payRate"/>
+                <if expression="hoursWorked &lt;= assignHours">
+                    <then>
+                        <assign variable="regularHours" expression="hoursWorked"/>
+                        <assign variable="regularPay" expression="regularHours * payRate"/>
+                        <assign variable="grossPay" expression="regularPay"/>
+                    </then>
+                    <else>
+                        <if expression="hoursWorked &gt; 40">
+                            <then>
+                                <assign variable="overTimePayRate" expression="payRate + (payRate/2)"/>
+                                <assign variable="overTimeHours" expression="hoursWorked - assignHours"/>
+                                <assign variable="overTimePayRate" expression="payRate + (payRate/2)"/>
+                                <assign variable="overTimePay" expression="overTimeHours * overTimePayRate"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="regularPay" expression="assignHours * payRate"/>
+                        <assign variable="grossPay" expression="regularPay + overTimePay"/>
+                    </else>
+                </if>
+                <output expression="&quot;Employee LastName: &quot; &amp;employeeLastName &amp; &quot; &quot; &amp;&#13;&#10;&#13;&#10;&quot;Gross pays:  &quot; &amp;grossPay" newline="True"/>
+                <assign variable="numberOfemployees" expression="numberOfemployees + 1"/>
+                <assign variable="sumGrossPays" expression="sumGrossPays + grossPay"/>
+                <input variable="continueProgram"/>
+            </while>
+            <output expression="&quot;numberOfemployees: &quot; &amp;numberOfemployees" newline="True"/>
+            <output expression="&quot;Sum Gross Payss: &quot; &amp;sumGrossPays" newline="True"/>
+            <assign variable="averagePay" expression="sumGrossPays/numberOfemployees"/>
+            <output expression="&quot;Sum of all the gross pays: &quot; &amp;sumGrossPays &amp;&quot; &quot; &amp;&#13;&#10;&quot;The number of employees: &quot; &amp;numberOfemployees &amp;&quot; &quot; &amp;&#13;&#10;&quot;The average pay: &quot; &amp;averagePay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

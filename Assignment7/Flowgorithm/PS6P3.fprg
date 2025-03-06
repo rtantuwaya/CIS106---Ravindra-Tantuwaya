@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS6P3"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-05 10:16:13 AM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNTswOToxNjo0MyBBTTsyNDEw"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNTsxMDoxNjoxMyBBTTsxOzI1MDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userEntry" type="String" array="False" size=""/>
+            <input variable="userEntry"/>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="examOneScore" type="Real" array="False" size=""/>
+            <declare name="examTwoScore" type="Real" array="False" size=""/>
+            <declare name="averageScore" type="Real" array="False" size=""/>
+            <declare name="numberOfStudent" type="Integer" array="False" size=""/>
+            <assign variable="numberOfStudent" expression="0"/>
+            <while expression="userEntry == &quot;Yes&quot;">
+                <input variable="lastName"/>
+                <input variable="examOneScore"/>
+                <input variable="examTwoScore"/>
+                <assign variable="averageScore" expression="(examOneScore + examTwoScore)/2"/>
+                <output expression="&quot;Student Name: &quot; &amp;lastname &amp; &quot; &quot; &amp;&#13;&#10;&#13;&#10;&quot;Average Score: &quot; &amp;averageScore" newline="True"/>
+                <assign variable="numberOfStudent" expression="numberOfStudent + 1"/>
+                <input variable="userEntry"/>
+            </while>
+            <output expression="&quot;Number of Student: &quot; &amp;numberOfStudent" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

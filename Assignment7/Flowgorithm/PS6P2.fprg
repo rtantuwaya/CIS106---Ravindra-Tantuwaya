@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS6P2"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-04 07:58:13 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNDswNzozNTozMyBQTTsyNDIy"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNDswNzo1ODoxMyBQTTsxOzI1MzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="startValue" type="Integer" array="False" size=""/>
+            <declare name="endValue" type="Integer" array="False" size=""/>
+            <declare name="incrementValue" type="Integer" array="False" size=""/>
+            <declare name="dispayValue" type="Integer" array="False" size=""/>
+            <input variable="startValue"/>
+            <input variable="endValue"/>
+            <input variable="incrementValue"/>
+            <assign variable="dispayValue" expression="startValue"/>
+            <while expression="dispayValue &lt;= endValue">
+                <output expression="dispayValue" newline="True"/>
+                <assign variable="dispayValue" expression="dispayValue + incrementValue"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

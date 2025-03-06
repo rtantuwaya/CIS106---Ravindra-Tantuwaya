@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS6P1"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-04 07:31:10 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNDswNzowNjoyMyBQTTsyNDE5"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0wNDswNzozMToxMCBQTTsxOzI1MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="number" type="Integer" array="False" size=""/>
+            <declare name="displayNumber" type="Integer" array="False" size=""/>
+            <assign variable="number" expression="1"/>
+            <while expression="number &lt;= 25">
+                <assign variable="displayNumber" expression="number"/>
+                <output expression="displayNumber" newline="True"/>
+                <assign variable="number" expression="number + 2"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
