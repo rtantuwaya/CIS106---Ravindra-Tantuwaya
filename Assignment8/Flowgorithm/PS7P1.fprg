@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS7P1"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-12 12:38:37 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0xMTswMjozOToyNiBQTTsyNDIx"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0xMjsxMjozODozNyBQTTsxOzI1MzI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principleAmount" type="Real" array="False" size=""/>
+            <declare name="interestRate" type="Real" array="False" size=""/>
+            <declare name="beginBalance" type="Real" array="False" size=""/>
+            <declare name="endBalance" type="Real" array="False" size=""/>
+            <declare name="interestEarned" type="Real" array="False" size=""/>
+            <input variable="principleAmount"/>
+            <input variable="interestRate"/>
+            <assign variable="endBalance" expression="principleAmount"/>
+            <declare name="numYear" type="Integer" array="False" size=""/>
+            <declare name="earnInterestTotal" type="Real" array="False" size=""/>
+            <assign variable="earnInterestTotal" expression="0"/>
+            <for variable="numYear" start="1" end="5" direction="inc" step="1">
+                <assign variable="beginBalance" expression="endBalance"/>
+                <assign variable="interestEarned" expression="beginBalance * 0.10"/>
+                <assign variable="endBalance" expression="beginBalance + interestEarned"/>
+                <output expression="&quot;Year  $&quot;&amp;numYear &amp; &quot;  &quot; &amp;&#13;&#10;&quot;Beinging Balance  $&quot;&amp;beginBalance &amp; &quot; &quot;&amp;&#13;&#10;&quot;Ending Balance  $&quot;&amp;endBalance" newline="True"/>
+                <assign variable="earnInterestTotal" expression="earnInterestTotal + interestEarned"/>
+            </for>
+            <output expression="&quot;Total interest earned:  $&quot;&amp;earnInterestTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

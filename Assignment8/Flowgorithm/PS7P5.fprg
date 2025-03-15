@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS7P5"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-15 12:13:25 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0xNTsxMTozMDowNiBBTTsyMzk5"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0xNTsxMjoxMzoyNSBQTTsxOzI1MjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nextLine" type="String" array="False" size=""/>
+            <declare name="studentLastName" type="String" array="False" size=""/>
+            <declare name="districtCode" type="String" array="False" size=""/>
+            <declare name="creditsTaken" type="Integer" array="False" size=""/>
+            <declare name="totaTuitionOwed" type="Real" array="False" size=""/>
+            <assign variable="totaTuitionOwed" expression="0"/>
+            <declare name="studentCount" type="Integer" array="False" size=""/>
+            <assign variable="studentCount" expression="0"/>
+            <open expression="students" mode="read"/>
+            <while expression="nextLine != &quot;&quot;">
+                <assign variable="studentLastName" expression="nextLine"/>
+                <assign variable="districtCode" expression="nextLine"/>
+                <assign variable="creditsTaken" expression="nextLine"/>
+                <declare name="costPerCredit" type="Real" array="False" size=""/>
+                <declare name="tuitionOwed" type="Real" array="False" size=""/>
+                <if expression="districtCode == &quot;I&quot;">
+                    <then>
+                        <assign variable="costPerCredit" expression="250.00"/>
+                    </then>
+                    <else>
+                        <if expression="districtCode == &quot;O&quot;">
+                            <then>
+                                <assign variable="costPerCredit" expression="500.00"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="tuitionOwed" expression="creditsTaken * costPerCredit"/>
+                <output expression="&quot;Student Last Name:&quot; &amp;studentLastName" newline="True"/>
+                <output expression="&quot;Credits Taken: &quot; &amp;creditsTaken" newline="True"/>
+                <output expression="&quot;Tuition Owed: &quot; &amp;tuitionOwed" newline="True"/>
+                <assign variable="totaTuitionOwed" expression="totaTuitionOwed + tutionOwed"/>
+                <assign variable="studentCount" expression="studentCount + 1"/>
+            </while>
+            <output expression="&quot;Total Tution Owed: &quot; &amp;totaTuitionOwed" newline="True"/>
+            <output expression="&quot;Number of Students: &quot; &amp;studentCount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
