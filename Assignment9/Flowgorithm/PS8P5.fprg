@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P5"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-23 02:11:59 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMzswMTozNjowMSBQTTsyNDEz"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMzswMTo1NDozOCBQTTs4O3JhdnRhO1JBVklORFJBOzIwMjUtMDMtMTU7MTE6MzA6MDYgQU07UFM3UDUuZnByZzs1ODgz"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMzswMjoxMTo1OSBQTTsxOzI1Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userEntry" type="String" array="False" size=""/>
+            <declare name="studentLastName" type="String" array="False" size=""/>
+            <declare name="districtCode" type="String" array="False" size=""/>
+            <declare name="creditsTaken" type="Integer" array="False" size=""/>
+            <declare name="totaTuitionOwed" type="Real" array="False" size=""/>
+            <assign variable="totaTuitionOwed" expression="0"/>
+            <declare name="studentCount" type="Integer" array="False" size=""/>
+            <assign variable="studentCount" expression="0"/>
+            <input variable="userEntry"/>
+            <while expression="userEntry == &quot;yes&quot;">
+                <input variable="studentLastName"/>
+                <input variable="creditsTaken"/>
+                <input variable="districtCode"/>
+                <declare name="tuitionOwed" type="Real" array="False" size=""/>
+                <assign variable="tuitionOwed" expression="computeTuitionOwed(creditsTaken, districtCode)"/>
+                <output expression="&quot;Student Last Name: &quot; &amp;studentLastName &amp; &quot;  &quot;&amp;&#13;&#10;&quot;Tuition Owed: &quot; &amp;tuitionOwed" newline="True"/>
+                <assign variable="totaTuitionOwed" expression="totaTuitionOwed + tuitionOwed"/>
+                <input variable="userEntry"/>
+            </while>
+            <output expression="&quot;Total Tution Owed: &quot; &amp;totaTuitionOwed" newline="True"/>
+        </body>
+    </function>
+    <function name="computeTuitionOwed" type="Real" variable="tuitionOwed">
+        <parameters>
+            <parameter name="creditsTaken" type="Integer" array="False"/>
+            <parameter name="districtCode" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="costPerCredit" type="Real" array="False" size=""/>
+            <declare name="tuitionOwed" type="Real" array="False" size=""/>
+            <if expression="districtCode == &quot;I&quot;">
+                <then>
+                    <assign variable="costPerCredit" expression="250.00"/>
+                </then>
+                <else>
+                    <if expression="districtCode == &quot;O&quot;">
+                        <then>
+                            <assign variable="costPerCredit" expression="550.00"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <assign variable="tuitionOwed" expression="creditsTaken * costPerCredit"/>
+        </body>
+    </function>
+</flowgorithm>

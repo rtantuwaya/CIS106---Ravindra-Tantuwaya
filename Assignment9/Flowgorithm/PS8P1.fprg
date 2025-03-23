@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P1"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-21 02:53:15 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMTsxMjoyNDowNiBQTTsyNDE1"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMTswMjo1MzoxNSBQTTsxOzI1MjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userEntry" type="String" array="False" size=""/>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="Extprice" type="Real" array="False" size=""/>
+            <declare name="totalExtPrice" type="Real" array="False" size=""/>
+            <assign variable="totalExtPrice" expression="0"/>
+            <output expression="&quot;Do you want to do this program (Yes or No)&quot;" newline="True"/>
+            <input variable="userEntry"/>
+            <while expression="userEntry == &quot;yes&quot;">
+                <output expression="&quot;Enter a quantity&quot;" newline="True"/>
+                <input variable="quantity"/>
+                <output expression="&quot;Enter the Price&quot;" newline="True"/>
+                <input variable="price"/>
+                <assign variable="Extprice" expression="CompExtPrice(quantity,price)"/>
+                <output expression="&quot;The extended price extended: &quot; &amp;quantity &amp; &quot;  &quot; &#13;&#10;&amp;price &amp;&quot;  &quot; &amp;Extprice" newline="True"/>
+                <output expression="&quot;Do you want to do this program (Yes or No)&quot;" newline="True"/>
+                <assign variable="totalExtPrice" expression="totalExtPrice + Extprice"/>
+                <input variable="userEntry"/>
+            </while>
+            <output expression="&quot;Total the extended price: &quot; &amp;totalExtPrice" newline="True"/>
+        </body>
+    </function>
+    <function name="CompExtPrice" type="Real" variable="newExtPrice">
+        <parameters>
+            <parameter name="qty" type="Integer" array="False"/>
+            <parameter name="unitprice" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <declare name="Discamt" type="Real" array="False" size=""/>
+            <declare name="newExtPrice" type="Real" array="False" size=""/>
+            <assign variable="extendedPrice" expression="qty * unitprice"/>
+            <if expression="extendedPrice &gt; 10000">
+                <then>
+                    <assign variable="Discamt" expression="extendedPrice * 0.10"/>
+                </then>
+                <else>
+                    <assign variable="Discamt" expression="0"/>
+                </else>
+            </if>
+            <assign variable="newExtPrice" expression="extendedPrice - Discamt"/>
+        </body>
+    </function>
+</flowgorithm>

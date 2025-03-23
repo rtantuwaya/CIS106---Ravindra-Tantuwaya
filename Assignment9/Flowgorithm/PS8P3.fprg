@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P3"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-22 08:00:42 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMjswNjo0Mjo1NSBQTTsyNDIz"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMjswODowMDo0MiBQTTsyOzI1MjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userEntry" type="String" array="False" size=""/>
+            <declare name="destinationCity" type="String" array="False" size=""/>
+            <declare name="milesTravelled" type="Real" array="False" size=""/>
+            <declare name="gallonsGas" type="Real" array="False" size=""/>
+            <declare name="milesPerGallon" type="Real" array="False" size=""/>
+            <declare name="numberOfDestination" type="Integer" array="False" size=""/>
+            <assign variable="numberOfDestination" expression="0"/>
+            <input variable="userEntry"/>
+            <while expression="userEntry == &quot;Yes&quot;">
+                <input variable="destinationCity"/>
+                <input variable="milesTravelled"/>
+                <input variable="gallonsGas"/>
+                <assign variable="milesPerGallon" expression="computeMilesPerGallon(milesTravelled,gallonsGas)"/>
+                <output expression="&quot;Miles Per Gallon:  &quot; &amp;milesPerGallon" newline="True"/>
+                <assign variable="numberOfDestination" expression="numberOfDestination + 1"/>
+                <input variable="userEntry"/>
+            </while>
+            <output expression="&quot;Number Of Destination: &quot; &amp;numberOfDestination" newline="True"/>
+        </body>
+    </function>
+    <function name="computeMilesPerGallon" type="Real" variable="milesPerGallon">
+        <parameters>
+            <parameter name="milesTravelled" type="Real" array="False"/>
+            <parameter name="gallonsGas" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="milesPerGallon" type="Real" array="False" size=""/>
+            <if expression="gallonsGas != 0">
+                <then>
+                    <assign variable="milesPerGallon" expression="gallonsGas / milesTravelled"/>
+                </then>
+                <else>
+                    <assign variable="milesPerGallon" expression="0"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

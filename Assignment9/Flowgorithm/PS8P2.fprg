@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="funtiontest"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-22 05:22:12 PM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMjswMzozNjo1OSBQTTsyNDI3"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMjswNToyMjoxMiBQTTsyOzI1MjI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userEntry" type="String" array="False" size=""/>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="hits" type="Integer" array="False" size=""/>
+            <declare name="atBats" type="Integer" array="False" size=""/>
+            <declare name="battingAverage" type="Real" array="False" size=""/>
+            <input variable="userEntry"/>
+            <while expression="userEntry == &quot;Yes&quot;">
+                <input variable="lastName"/>
+                <input variable="hits"/>
+                <input variable="atBats"/>
+                <assign variable="battingAverage" expression="calculateBattingAverage(hits, atBats)"/>
+                <output expression="&quot;battingAverage  &quot; &amp;battingAverage" newline="True"/>
+                <input variable="userEntry"/>
+            </while>
+            <output expression="userEntry" newline="True"/>
+        </body>
+    </function>
+    <function name="calculateBattingAverage" type="Real" variable="averge">
+        <parameters>
+            <parameter name="hits" type="Integer" array="False"/>
+            <parameter name="atBats" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="averge" type="Real" array="False" size=""/>
+            <if expression="hits == 0">
+                <then>
+                    <assign variable="averge" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="averge" expression="hits/atBats"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

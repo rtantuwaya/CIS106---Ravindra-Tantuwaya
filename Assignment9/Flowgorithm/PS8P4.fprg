@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P4"/>
+        <attribute name="authors" value="ravta"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-23 02:13:18 AM"/>
+        <attribute name="created" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMjswODowMDo0OSBQTTsyNDIy"/>
+        <attribute name="edited" value="cmF2dGE7UkFWSU5EUkE7MjAyNS0wMy0yMzswMjoxMzoxOCBBTTsxOzI1MTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="employeeLastName" type="String" array="False" size=""/>
+            <declare name="jobCode" type="String" array="False" size=""/>
+            <declare name="hoursWorked" type="Real" array="False" size=""/>
+            <declare name="assignHours" type="Integer" array="False" size=""/>
+            <assign variable="assignHours" expression="40"/>
+            <declare name="assignHoursPay" type="Real" array="False" size=""/>
+            <declare name="overTimeHours" type="Integer" array="False" size=""/>
+            <assign variable="overTimeHours" expression="0"/>
+            <declare name="payRate" type="Real" array="False" size=""/>
+            <declare name="overTimePayRate" type="Real" array="False" size=""/>
+            <assign variable="overTimePayRate" expression="0"/>
+            <declare name="overTimePay" type="Real" array="False" size=""/>
+            <input variable="employeeLastName"/>
+            <input variable="jobCode"/>
+            <input variable="hoursWorked"/>
+            <declare name="grossPay" type="Real" array="False" size=""/>
+            <assign variable="grossPay" expression="0"/>
+            <assign variable="payRate" expression="determinePayRate(jobCode)"/>
+            <output expression="&quot;determinePayRate &quot; &amp;payRate" newline="True"/>
+            <if expression="hoursWorked &lt;= assignHours">
+                <then>
+                    <assign variable="grossPay" expression="hoursWorked * payRate"/>
+                </then>
+                <else>
+                    <if expression="hoursWorked &gt; 40">
+                        <then>
+                            <assign variable="overTimeHours" expression="hoursWorked - 40"/>
+                            <assign variable="overTimePayRate" expression="payRate + (payRate/2)"/>
+                            <assign variable="overTimePay" expression="overTimeHours * overTimePayRate"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="assignHoursPay" expression="assignHours * payRate"/>
+                    <assign variable="grossPay" expression="assignHoursPay + overTimePay"/>
+                </else>
+            </if>
+            <output expression="&quot;Employee LastName: &quot; &amp;employeeLastName &amp; &quot; &quot; &amp;&#13;&#10;&#13;&#10;&quot;Gross pays:  &quot; &amp;grossPay" newline="True"/>
+        </body>
+    </function>
+    <function name="determinePayRate" type="Real" variable="hourRate">
+        <parameters>
+            <parameter name="jobCode" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="hourRate" type="Real" array="False" size=""/>
+            <if expression="jobCode == &quot;L&quot;">
+                <then>
+                    <assign variable="hourRate" expression="25"/>
+                </then>
+                <else>
+                    <if expression="jobCode == &quot;A&quot;">
+                        <then>
+                            <assign variable="hourRate" expression="30"/>
+                        </then>
+                        <else>
+                            <if expression="jobCode == &quot;J&quot;">
+                                <then>
+                                    <assign variable="hourRate" expression="50"/>
+                                </then>
+                                <else>
+                                    <assign variable="hourRate" expression="0"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
